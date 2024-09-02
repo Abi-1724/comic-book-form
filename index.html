@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Book Registration and Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .form-group.radio-group {
+            text-align: left; /* Align text to the left */
+            margin-left: 0; /* Align to the left edge of the form */
+            margin-bottom: 16px; /* Add space below the radio buttons */
+        }
+
+        .radio-group label {
+            display: inline-block; /* Keep label and radio buttons inline */
+            margin-right: 10px; /* Add space between radio buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="form-container">
+            <!-- Login Form -->
+            <div id="login-form">
+                <h1 class="text-2xl font-bold mb-4">Welcome Back to Comic Book Registration</h1>
+                <form onsubmit="return login(event)">
+                    <div class="mb-4">
+                        <label for="login-username" class="block text-sm font-medium text-gray-700">Username</label>
+                        <input type="text" id="login-username" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="login-password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="login-password" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+                    </div>  
+                    <br>
+                    <button type="submit" class="bg-blue-500 text-white py-2 rounded w-full hover:bg-blue-600">Login</button>
+                    <p class="mt-4 text-center">Don't have an account? <a href="#" onclick="toggleForms()" class="text-blue-500">Sign Up</a></p>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form" class="hidden">
+                <h1 class="text-2xl font-bold mb-4">Comic Book Registration</h1>
+                <form onsubmit="return signup(event)">
+                    <div class="mb-4">
+                        <label for="signup-username" class="block text-sm font-medium text-gray-700">Username</label>
+                        <input type="text" id="signup-username" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="signup-email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="signup-email" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="signup-password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="signup-password" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+                    </div> 
+                    <div class="mb-4">
+                        <label for="signup-age" class="block text-sm font-medium text-gray-700">Age</label>
+                        <input type="number" id="signup-age" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+                    </div>   
+                    <div class="mb-4">
+                        <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                        <select id="gender" name="gender" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                            <option value="select">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="bookName" class="block text-sm font-medium text-gray-700">Book Name</label>
+                        <input type="text" id="bookName" name="bookName" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="author" class="block text-sm font-medium text-gray-700">Author</label>
+                        <input type="text" id="author" name="author" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="format" class="block text-sm font-medium text-gray-700">Preferred Book Format</label>
+                        <select id="format" name="format" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                            <option value="select">Select</option>
+                            <option value="pdf">PDF</option>
+                            <option value="epub">EPUB</option>
+                            <option value="mobi">MOBI</option>
+                        </select>
+                    </div>
+                    <p>Select Your Role</p>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="role" value="reader">Reader
+                           </label>
+                        <label>
+                            <input type="radio" name="role" value="creator">Creator
+                        </label>
+                    </div>
+                    
+                
+                    
+                    
+                    <button type="submit" class="bg-green-500 text-white py-2 rounded w-full hover:bg-green-600">Sign Up</button>
+                    <p class="mt-4 text-center">Already have an account? <a href="#" onclick="toggleForms()" class="text-blue-500">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
